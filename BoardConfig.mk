@@ -50,6 +50,3 @@ VENDOR_SECURITY_PATCH := 2020-11-01
 
 # TWRP
 include device/twrp/jasmine_sprout/twrp.mk
-
-# Inherit the proprietary files
-include vendor/xiaomi/jasmine_sprout/BoardConfigVendor.mk
