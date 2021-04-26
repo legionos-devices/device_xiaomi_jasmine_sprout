@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2021 Project LegionOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,8 +20,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# Inherit some common AOSiP stuff
-$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
+# Inherit some common LegionOS stuff
+$(call inherit-product, vendor/legion/config/common_full_phone.mk)
+
+# LegionOS Device Maintainers
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.maintainer.name=Immanuel_Raj
+
+#Boot Animation Resolution
+TARGET_BOOT_ANIMATION_RES := 1080
+
+#Play bold Play wild
+LEGION_BUILD_TYPE := OFFICIAL
+
+#Gapps Architecture
+TARGET_GAPPS_ARCH := arm64
 
 # Inherit from jasmine_sprout device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -29,7 +43,7 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := jasmine_sprout
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := Mi A2
-PRODUCT_NAME := aosip_jasmine_sprout
+PRODUCT_NAME := legion_jasmine_sprout
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
